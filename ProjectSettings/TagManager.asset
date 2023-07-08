@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScrapField
   - OilPipeline
+  - Enemy
   layers:
   - Default
   - TransparentFX

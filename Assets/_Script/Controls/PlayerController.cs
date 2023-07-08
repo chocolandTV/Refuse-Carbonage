@@ -9,33 +9,26 @@ public class PlayerController : MonoBehaviour
     private Vector3 _mousePositionStart;
     private Vector3 _mouisePositionEnds;
     private SelectableUnit _unit;
-    private NavMeshAgent _agent;
+
     private void Start()
     {
-        _agent =  GetComponent<NavMeshAgent>();
-        _unit = GetComponent<SelectableUnit>();
         SubscribeToInput();
-        SelectionManager.Instance.AvailableUnits.Add(_unit);
-        // INITIAL TARGET
+
     }
-    private void Move()
-    {
-        _agent.SetDestination(_mousePositionStart);
-        
-    }
+
     //////////////////////////////////
     // INPUT 
     //////////////////////////////////
     private void SubscribeToInput()
     {
-        InputManager.OnLook+= OnLookInput;
-        InputManager.OnInteract+= OnInteractInput;
+        InputManager.OnLook += OnLookInput;
+        InputManager.OnInteract += OnInteractInput;
         InputManager.OnSpawn += OnSpawnInput;
     }
     private void UnsubscribeToInput()
     {
-        InputManager.OnLook-= OnLookInput;
-        InputManager.OnInteract-= OnInteractInput;
+        InputManager.OnLook -= OnLookInput;
+        InputManager.OnInteract -= OnInteractInput;
         InputManager.OnSpawn -= OnSpawnInput;
     }
     private void OnLookInput(InputAction.CallbackContext context)
@@ -53,28 +46,49 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            _mousePositionStart = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
-            if(SelectionManager.Instance.IsSelected(_unit))
-            {
-                // Move(); TO SELECTED UNITS PORT
-            }
-            // IF SELECTED UNIT is PLAYER MOVE  to mousePosition start as Destination with navMesh
-        }
-        else if (context.canceled)
-        {
-            _mouisePositionEnds = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
 
-            // ADD ALL ON PHYSICS COLLIDER TO SELECTED UNITS 
-            // SelectionManager.Instance.AvailableUnits.Add(this);
+            //_mousePositionStart = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                _unit = hit.transform.gameObject.GetComponent<SelectableUnit>();
+                if (_unit != null && _unit.UnitFraction == 0)
+                {
+                    // SelectionManager.Instance.DeselectAll();
+                    SelectionManager.Instance.Select(_unit);
+                    TargetManager.Instance.UpdateTarget(hit.transform.position);
+
+                }
+                else if (_unit != null && _unit.UnitFraction == 1)
+                {
+                    // UPDATE MAP INFO
+                    Debug.Log("Selected Unit: " + _unit.infoText);
+                }
+                else
+                {
+                    // SelectionManager.Instance.DeselectAll();  NO HIT
+                }
+            }
+
         }
+
     }
     public void OnSpawnInput(InputAction.CallbackContext context)
     {
-        if (context.performed && Time.timeScale != 0)
+        if (context.performed)
         {
             // try parse the name of the control to an int
-            int index = 1;
+            int index = 11;
             int.TryParse(context.control.name, out index);
+            if (index < 11)
+            {
+                WaveManager.Instance.AddUnit(index);
+            }
+            if (index == 11)
+            {
+                // START MENU HIDE HUD
+            }
             // IF ENOUGH MINERAL
             // WAVE MANAGER  add UNIT [id index]
 
