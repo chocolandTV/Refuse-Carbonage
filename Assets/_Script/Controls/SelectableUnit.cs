@@ -64,6 +64,7 @@ public class SelectableUnit : MonoBehaviour
         if (damage > 0 && other.CompareTag("Player") && UnitFraction == 0)
         {
             other.GetComponent<SelectableUnit>().Hit(damage);
+            GetComponent<TowerAttack>().AttackUnit(other.gameObject.transform.position);
         }
         if (other.CompareTag("Player") && !gameObject.CompareTag("Player") && UnitFraction == 0)
         {
@@ -89,6 +90,8 @@ public class SelectableUnit : MonoBehaviour
         if (damage > 0 && other.CompareTag("Player") && UnitFraction == 0)
         {
             other.GetComponent<SelectableUnit>().Hit(damage);
+            GetComponent<TowerAttack>().AttackUnit(other.gameObject.transform.position);
+
         }
         if (other.CompareTag("Player") && !gameObject.CompareTag("Player") && UnitFraction == 0)
         {
