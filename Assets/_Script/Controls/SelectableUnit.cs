@@ -93,7 +93,8 @@ public class SelectableUnit : MonoBehaviour
         if (damage > 0 && other.CompareTag("Player") && UnitFraction == 0)
         {
             other.GetComponent<SelectableUnit>().Hit(damage);
-            // GetComponent<TowerAttack>().AttackUnit(other.gameObject.transform.position);
+            // TOWER EFFECT 
+            GetComponentInChildren<Animator>().SetTrigger("dealDamage");
 
         }
         if (other.CompareTag("Player") && !gameObject.CompareTag("Player") && UnitFraction == 0)

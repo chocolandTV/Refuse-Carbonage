@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> unitContainer = new List<GameObject>();
     [SerializeField] private GameObject firstTarget;
     private float wave_cooldown = 0;
-    private float wave_time = 1;
+    private float wave_time = 10;
     private int wave_index=0;
     private float secondStep;
     public Vector3 TargetPosition{get;set;}
