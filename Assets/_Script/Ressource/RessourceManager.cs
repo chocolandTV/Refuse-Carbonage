@@ -40,7 +40,7 @@ public class RessourceManager : MonoBehaviour
     }
     public bool UnitBuyable(int value)
     {
-        return (Ressource_Wallet> value);
+        return (Ressource_Wallet>= value);
     }
     public string getWallet()
     {

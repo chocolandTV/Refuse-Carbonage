@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
     public static event Action<CallbackContext> OnInteract;
     public static event Action<CallbackContext> OnPause;
     public static event Action<CallbackContext> OnSpawn;
+    public static event Action<CallbackContext> OnZoom;
 
     private void OnLookInput(CallbackContext context)
     {
@@ -48,6 +49,10 @@ public class InputManager : MonoBehaviour
     private void OnSpawnInput(CallbackContext context)
     {
         OnSpawn?.Invoke(context);
+    }
+    private void OnZoomInput(CallbackContext context)
+    {
+        OnZoom?.Invoke(context);
     }
 
     ////////////////////////////////////////////////
@@ -74,6 +79,10 @@ public class InputManager : MonoBehaviour
         _playerInput.actions["Spawn"].started += OnSpawnInput;
         _playerInput.actions["Spawn"].performed += OnSpawnInput;
         _playerInput.actions["Spawn"].canceled += OnSpawnInput;
+
+        _playerInput.actions["Zoom"].started += OnZoomInput;
+        _playerInput.actions["Zoom"].performed += OnZoomInput;
+        _playerInput.actions["Zoom"].canceled += OnZoomInput;
     }
     ////////////////////////////////////////////////
     // UNSUBSCRIBE 
@@ -99,6 +108,10 @@ public class InputManager : MonoBehaviour
         _playerInput.actions["Spawn"].started -= OnSpawnInput;
         _playerInput.actions["Spawn"].performed -= OnSpawnInput;
         _playerInput.actions["Spawn"].canceled -= OnSpawnInput;
+
+        _playerInput.actions["Zoom"].started -= OnZoomInput;
+        _playerInput.actions["Zoom"].performed -= OnZoomInput;
+        _playerInput.actions["Zoom"].canceled -= OnZoomInput;
     }
 
     private void OnDestroy() {

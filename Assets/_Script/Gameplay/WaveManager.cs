@@ -9,8 +9,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> unitContainer = new List<GameObject>();
     [SerializeField] private GameObject firstTarget;
     private float wave_cooldown = 0;
-    private float wave_time = 10;
+    private float wave_time = 1;
     private int wave_index=0;
+    private float secondStep;
     public Vector3 TargetPosition{get;set;}
     private List<int> SpawningList = new List<int>();
     private void Awake()
@@ -47,19 +48,28 @@ public class WaveManager : MonoBehaviour
             //NEXT ROUND GET INCOME
             RessourceManager.Instance.CollectIncome();
             HudManager.Instance.UpdateHUD(5,RessourceManager.Instance.getWallet());
-            if(SpawningList.Count != 0)
-            {
+                ////////////////////////////////////////////////////////////////////
+                // NEXT WAVE //
+                ///////////////////////////////////////////////////////////////////
                 wave_index++;
+                HudManager.Instance. UnlockUnit(wave_index);
+                EnemyManager.Instance.EnemyTurn(wave_index);
                 HudManager.Instance.UpdateHUD(2,""+ wave_index);
 
                 // SPAWN WAVE
                 SpawnUnits();
                 SpawningList.Clear();
                 HudManager.Instance.UpdateHUD(1,"0");
-            }
+            
         }
+        if(secondStep > 1)
+        {
+            secondStep = 0;
+            HudManager.Instance.UpdateHUD(3,""+ (int)(wave_time - wave_cooldown));
+        }
+        secondStep += Time.deltaTime;
         wave_cooldown +=Time.deltaTime;
-        HudManager.Instance.UpdateHUD(3,""+ (int)(wave_time - wave_cooldown));
+        // HudManager.Instance.UpdateHUD(3,""+ (int)(wave_time - wave_cooldown));
     }
     private void StartFirstWave()
     {
@@ -71,9 +81,10 @@ public class WaveManager : MonoBehaviour
     {
         if(RessourceManager.Instance.UnitBuyable(index))
         {
+            Debug.Log("ADD UNIT:" + unitContainer[index].name);
             RessourceManager.Instance.RemoveWallet(index);
             SpawningList.Add(index);
-            RessourceManager.Instance.AddIncome(index);
+            
             HudManager.Instance.UpdateHUD(4,RessourceManager.Instance.getIncome());
             HudManager.Instance.UpdateHUD(1,""+ SpawningList.Count);
             HudManager.Instance.UpdateHUD(5,RessourceManager.Instance.getWallet());
