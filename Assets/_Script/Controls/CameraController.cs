@@ -21,15 +21,16 @@ public class CameraController : MonoBehaviour
     {
         Vector3 position = transform.position;
 
-        if(_moveInput != Vector2.zero)
+        if (_moveInput != Vector2.zero)
         {
-            position.z+= _moveInput.y * panSpeed*Time.deltaTime;
-            position.x+= _moveInput.x * panSpeed* Time.deltaTime;
+            position.z += _moveInput.y * (panSpeed + MenuManager.Instance.CameraSpeedMultiplier) * Time.deltaTime;
+            position.x += _moveInput.x * (panSpeed + MenuManager.Instance.CameraSpeedMultiplier) * Time.deltaTime;
             transform.position = position;
             panSpeed += 0.1f;
         }
 
-        else{
+        else
+        {
             panSpeed = panSpeedOrigin;
         }
     }

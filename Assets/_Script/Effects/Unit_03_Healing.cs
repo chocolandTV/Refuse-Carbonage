@@ -27,27 +27,27 @@ public class Unit_03_Healing : MonoBehaviour
     private void HealUnit()
     {
         // GET NEARST REFUSY WITH LESS LIFE
-        
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in TargetManager.Instance.currentUnits)
-        {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance && go.GetComponent<SelectableUnit>().currentLife < go.GetComponent<SelectableUnit>().MaxLife)
-            { 
-                closest = go;
-                distance = curDistance;
-            }
-        }
-        if(closest != null)
-        {
+         // REWORK
+        // GameObject closest = null;
+        // float distance = Mathf.Infinity;
+        // Vector3 position = transform.position;
+        // foreach (GameObject go in TargetManager.Instance.currentUnits)
+        // {
+        //     Vector3 diff = go.transform.position - position;
+        //     float curDistance = diff.sqrMagnitude;
+        //     if (curDistance < distance && go.GetComponent<SelectableUnit>().currentLife < go.GetComponent<SelectableUnit>().MaxLife)
+        //     { 
+        //         closest = go;
+        //         distance = curDistance;
+        //     }
+        // }
+        // if(closest != null)
+        // {
 
-            closest.GetComponent<SelectableUnit>().currentLife += healingDamage;
-            HealEffectObject.SetActive(true);
-            Debug.Log("Healing");
-        }
+        //     closest.GetComponent<SelectableUnit>().currentLife += healingDamage;
+        //     HealEffectObject.SetActive(true);
+        //     Debug.Log("Healing");
+        // }
         
         
     }

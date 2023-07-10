@@ -49,7 +49,7 @@ public class SelectableUnit : MonoBehaviour
         if (currentLife < 0)
         {
             OnDeselect(); 
-            HudManager.Instance.UpdateHUD(0, "Great, your Income increased + " + RessourceAmount);
+            // HudManager.Instance.UpdateHUD(0, "Great, your Income increased + " + RessourceAmount);
             RessourceManager.Instance.AddIncome(RessourceAmount);
             HudManager.Instance.UpdateHUD(4,RessourceManager.Instance.getIncome());
             // PLAY SOUND 

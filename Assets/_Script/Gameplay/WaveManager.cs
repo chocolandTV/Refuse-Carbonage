@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> unitContainer = new List<GameObject>();
     [SerializeField] private GameObject firstTarget;
     private float wave_cooldown = 0;
-    private float wave_time = 10;
+    private float wave_time = 3;
     private int wave_index=0;
     private float secondStep;
     public Vector3 TargetPosition{get;set;}
@@ -52,6 +52,10 @@ public class WaveManager : MonoBehaviour
                 // NEXT WAVE //
                 ///////////////////////////////////////////////////////////////////
                 wave_index++;
+                if(wave_index ==100)
+                {
+                    HudManager.Instance.GameWin();
+                }
                 HudManager.Instance. UnlockUnit(wave_index);
                 EnemyManager.Instance.EnemyTurn(wave_index);
                 HudManager.Instance.UpdateHUD(2,""+ wave_index);
