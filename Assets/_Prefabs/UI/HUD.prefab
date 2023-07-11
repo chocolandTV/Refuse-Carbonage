@@ -3754,7 +3754,7 @@ MonoBehaviour:
   Text_Mission: {fileID: 3962356062701757068}
   Text_WaveNextUnitCount: {fileID: 5766514461372758935}
   Text_WaveIndex: {fileID: 3204261102552075375}
-  Text_WaveTime: {fileID: 8781690529982628758}
+  Text_FieldUnits: {fileID: 8781690529982628758}
   Text_Ressource_Income: {fileID: 848808873824556113}
   Text_Ressource_Wallet: {fileID: 7389801240512143423}
   Map_Name: {fileID: 362504562005827612}
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ff7a15b47e1915b449c958ae79ae72d2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 971e6b48c79a1244da0a38cb2fbeb241, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7942,7 +7942,7 @@ GameObject:
   - component: {fileID: 5767194699423423262}
   - component: {fileID: 8781690529982628758}
   m_Layer: 5
-  m_Name: NextWaveTime
+  m_Name: FieldUnits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

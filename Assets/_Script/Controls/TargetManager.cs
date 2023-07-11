@@ -27,9 +27,12 @@ public class TargetManager : MonoBehaviour
         {
             if(unit != null)
             {
-                Vector3 newPos = newTarget;
-                newPos = Random.insideUnitCircle * 20;
-                unit.GetComponent<NavMeshAgent>().SetDestination(newPos);
+                Vector3 Pos = newTarget;
+                
+                Vector2 offset = Random.insideUnitCircle * 2f;
+                Pos.x +=offset.x;
+                Pos.z +=offset.y;
+                unit.GetComponent<NavMeshAgent>().SetDestination(Pos);
             }
         }
     }

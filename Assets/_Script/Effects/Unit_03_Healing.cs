@@ -5,50 +5,26 @@ using UnityEngine;
 public class Unit_03_Healing : MonoBehaviour
 {
     [SerializeField]private GameObject HealEffectObject;
-    public int healingDamage = 1;
-    private float TimeStep = 0.5f;
+    public int healingDamage = 3;
+    private float TimeStep = 1f;
     private float time = 0;
     // Start is called before the first frame update
-    void Start()
+    
+    private void HealUnit(GameObject target)
     {
+       
         
+            target.GetComponent<SelectableUnit>().currentLife += healingDamage;
+            HealEffectObject.SetActive(true);
+            Debug.Log("Healing");
+            
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(time > TimeStep)
+    private void OnTriggerStay(Collider other) {
+        if(other.GetComponent<SelectableUnit>().isDamaged())
         {
-            time =0;
-            HealUnit();
+            HealUnit(other.gameObject);
         }
-        time += Time.fixedDeltaTime;
-    }
-    private void HealUnit()
-    {
-        // GET NEARST REFUSY WITH LESS LIFE
-         // REWORK
-        // GameObject closest = null;
-        // float distance = Mathf.Infinity;
-        // Vector3 position = transform.position;
-        // foreach (GameObject go in TargetManager.Instance.currentUnits)
-        // {
-        //     Vector3 diff = go.transform.position - position;
-        //     float curDistance = diff.sqrMagnitude;
-        //     if (curDistance < distance && go.GetComponent<SelectableUnit>().currentLife < go.GetComponent<SelectableUnit>().MaxLife)
-        //     { 
-        //         closest = go;
-        //         distance = curDistance;
-        //     }
-        // }
-        // if(closest != null)
-        // {
-
-        //     closest.GetComponent<SelectableUnit>().currentLife += healingDamage;
-        //     HealEffectObject.SetActive(true);
-        //     Debug.Log("Healing");
-        // }
+    }    
         
-        
-    }
+    
 }

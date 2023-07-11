@@ -7,6 +7,10 @@ public class RessourceManager : MonoBehaviour
     public static RessourceManager Instance { get; private set; }
     private int Ressource_Income = 1;
     private int Ressource_Wallet = 10;
+    public int STATS_TowerDestroyed = 0;
+    public int STATS_refusysSpawned =0;
+    public int STATS_highestGroup = 0;
+    public int STATS_highestWave = 0;
     
     private void Awake()
     {

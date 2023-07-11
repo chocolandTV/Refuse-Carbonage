@@ -121,7 +121,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 241832532072670775, guid: ad13840bb88d16447ad311b28b5c39fd,
+    - targetCorrespondingSourceObject: {fileID: 2986273843382165034, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9050425931235384029}
@@ -149,13 +149,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.487
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -233,9 +233,9 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &7400331628460348617 stripped
+--- !u!4 &5519455176080043220 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 241832532072670775, guid: ad13840bb88d16447ad311b28b5c39fd,
+  m_CorrespondingSourceObject: {fileID: 2986273843382165034, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 7343236841633788670}
   m_PrefabAsset: {fileID: 0}
@@ -245,47 +245,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7400331628460348617}
+    m_TransformParent: {fileID: 5519455176080043220}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0207
+      value: 0.004882017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2397
+      value: 0.06455895
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1229
+      value: 0.048062887
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.002757132
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0003553219
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.692485
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.721427
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
         type: 3}
@@ -306,6 +306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wallimus
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9b170ea77ae0a24da9f46c23f4c3f2e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

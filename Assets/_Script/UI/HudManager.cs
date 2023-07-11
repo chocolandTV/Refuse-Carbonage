@@ -9,7 +9,7 @@ public class HudManager : MonoBehaviour
     private bool[] unitUnlocked = new bool[9];
     [SerializeField]
     private TextMeshProUGUI Text_Mission, Text_WaveNextUnitCount, Text_WaveIndex,
-     Text_WaveTime, Text_Ressource_Income, Text_Ressource_Wallet, Map_Name, Map_Damage, Map_Life, Map_RessourceAmount, Map_UnitInfo;
+     Text_FieldUnits, Text_Ressource_Income, Text_Ressource_Wallet, Map_Name, Map_Damage, Map_Life, Map_RessourceAmount, Map_UnitInfo;
     [SerializeField] private GameObject Lock_unit_02, Lock_unit_03, Lock_unit_04, Lock_unit_05, Lock_unit_06, Lock_unit_07, Lock_unit_08;
     [SerializeField]private GameObject gameWinPanel;
     private void Awake()
@@ -112,7 +112,7 @@ public class HudManager : MonoBehaviour
                 Text_WaveIndex.text = text;
                 break;
             case 3:
-                Text_WaveTime.text = text;
+                Text_FieldUnits.text = text;
                 break;
             case 4:
                 Text_Ressource_Income.text = text;

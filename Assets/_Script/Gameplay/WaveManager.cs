@@ -11,7 +11,6 @@ public class WaveManager : MonoBehaviour
     private float wave_cooldown = 0;
     private float wave_time = 3;
     private int wave_index=0;
-    private float secondStep;
     public Vector3 TargetPosition{get;set;}
     private List<int> SpawningList = new List<int>();
     private void Awake()
@@ -66,12 +65,7 @@ public class WaveManager : MonoBehaviour
                 HudManager.Instance.UpdateHUD(1,"0");
             
         }
-        if(secondStep > 1)
-        {
-            secondStep = 0;
-            HudManager.Instance.UpdateHUD(3,""+ (int)(wave_time - wave_cooldown));
-        }
-        secondStep += Time.deltaTime;
+        
         wave_cooldown +=Time.deltaTime;
         // HudManager.Instance.UpdateHUD(3,""+ (int)(wave_time - wave_cooldown));
     }
@@ -102,11 +96,14 @@ public class WaveManager : MonoBehaviour
         {
             GameObject _spawn =Instantiate(unitContainer[SpawningList[i]], transform.position, Quaternion.identity);
             RessourceManager.Instance.STATS_refusysSpawned++;
-            Vector3 newPos = TargetPosition;
-            newPos = Random.insideUnitCircle * 10;
-            _spawn.GetComponent<NavMeshAgent>().SetDestination(newPos);
+            Vector3 Pos = TargetPosition;
+            Vector2 offset = Random.insideUnitCircle * 2f;
+            Pos.x +=offset.x;
+            Pos.z +=offset.y;
+            _spawn.GetComponent<NavMeshAgent>().SetDestination(Pos);
             TargetManager.Instance.currentUnits.Add(_spawn);
-            //Debug.Log(" SPAWNING UNIT :" + _spawn.name);
+            HudManager.Instance.UpdateHUD(3,""+ TargetManager.Instance.currentUnits.Count);
+            
         }
         
     }
