@@ -36,7 +36,11 @@ public class SelectableUnit : MonoBehaviour
         }
     }
     private void OnDestroy() {
-        TargetManager.Instance.currentUnits.Remove(gameObject);
+        if(UnitFraction == 1)
+        {
+
+            TargetManager.Instance.currentUnits.Remove(gameObject);
+        }
     }
     public void OnDeselect()
     {
@@ -45,10 +49,27 @@ public class SelectableUnit : MonoBehaviour
     }
     public void Hit(int Amount)
     {
+        
         currentLife -= Amount;
+        if(WaveManager.Instance.TargetPosition == transform.position)
+        {
+           HudManager.Instance.UpdateUnitMapInfo(unitName,damage.ToString(),currentLife.ToString(), RessourceAmount.ToString(), infoText);
+        }
         if (currentLife < 0)
         {
-            OnDeselect(); 
+            if(UnitFraction == 1)
+            {
+                SoundManager.Instance.PlaySound(SoundManager.Sound.UnitDying, transform.position);
+            }
+            if(UnitFraction ==0)
+            {
+                 SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed, transform.position);
+            }
+            if(damage >= 1)
+            {
+                RessourceManager.Instance.STATS_TowerDestroyed++;
+            }
+            SelectionManager.Instance.Deselect(this);
             // HudManager.Instance.UpdateHUD(0, "Great, your Income increased + " + RessourceAmount);
             RessourceManager.Instance.AddIncome(RessourceAmount);
             HudManager.Instance.UpdateHUD(4,RessourceManager.Instance.getIncome());

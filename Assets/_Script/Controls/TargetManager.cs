@@ -27,35 +27,13 @@ public class TargetManager : MonoBehaviour
         {
             if(unit != null)
             {
-
-                unit.GetComponent<NavMeshAgent>().SetDestination(WaveManager.Instance.TargetPosition);
+                Vector3 newPos = newTarget;
+                newPos = Random.insideUnitCircle * 20;
+                unit.GetComponent<NavMeshAgent>().SetDestination(newPos);
             }
         }
     }
-    public void SearchNewTarget(GameObject obj)
-    {
-        RemoveBuilding(obj);
-        // GameObject[] gos;
-        // gos = GameObject.FindGameObjectsWithTag("Enemy");
-        // GameObject closest = null;
-        // float distance = Mathf.Infinity;
-        
-        // foreach (GameObject go in gos)
-        // {
-        //     Vector3 diff = go.transform.position - obj.transform.position;
-        //     float curDistance = diff.sqrMagnitude;
-        //     if (curDistance < distance)
-        //     {
-        //         closest = go;
-        //         distance = curDistance;
-        //     }
-        // }
-        // closest.GetComponent<SelectableUnit>().OnSelected();
-        // Debug.Log("NextTarget :" + closest.name);
-        
-        // UpdateTarget(closest.transform.position);
-        UpdateTarget(allTarget[0].transform.position);
-    }
+    
     public void AddNewBuilding(GameObject unit)
     {
         allTarget.Add(unit);

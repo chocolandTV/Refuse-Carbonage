@@ -58,12 +58,13 @@ public class MenuManager : MonoBehaviour
     }
     public void OnChangeSoundVolume()
     {
-        // SoundManager.Instance.OnChangeSoundVolume(SoundSlider.value);
+        
         Debug.Log(" CHANGE SoundsSlider TO : " + SoundSlider.value);
-        //SoundManager.Instance.PlaySound(SoundManager.Sound.Robot_Happy, PlayerController.Instance.transform.position);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
     }
     public void OnChangeMusicVolume()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UnitLaughing, transform.position);
         //SoundManager.Instance.OnChangeMusicVolume(MusicSlider.value);
         Debug.Log(" CHANGE MusicSlider TO : " + MusicSlider.value);
     }
@@ -82,7 +83,7 @@ public class MenuManager : MonoBehaviour
         SettingMenuPanel.SetActive(true);
         SettingsPanel.SetActive(false);
         CreditMenuPanel.SetActive(true);
-
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         // CREDITS ON  - > BACK BUTTON
     }
     public void OnChangeSettings()
@@ -91,7 +92,7 @@ public class MenuManager : MonoBehaviour
         SettingMenuPanel.SetActive(true);
         SettingsPanel.SetActive(true);
         CreditMenuPanel.SetActive(false);
-
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         // CREDITS ON  - > BACK BUTTON
     }
     public void OnChangeGameStart()
@@ -99,12 +100,13 @@ public class MenuManager : MonoBehaviour
 
         HudMenu.SetActive(true);
         MainMenu.SetActive(false);
-        
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         SceneManager.LoadScene("Game_Main");
         // UI OFF HUD ON
     }
     public void OnChangeGamePaused()
-    {
+    {   
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         HudMenu.SetActive(false);
         MainMenu.SetActive(true);
         Time.timeScale = 0;
@@ -112,6 +114,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnChangeGameResume()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         HudMenu.SetActive(true);
         MainMenu.SetActive(false);
         Time.timeScale = 1;
@@ -119,6 +122,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnChangeGameQuit()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         Application.Quit();
     }
 }

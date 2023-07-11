@@ -85,7 +85,7 @@ public class WaveManager : MonoBehaviour
     {
         if(RessourceManager.Instance.UnitBuyable(index))
         {
-            Debug.Log("ADD UNIT:" + unitContainer[index].name);
+            // Debug.Log("ADD UNIT:" + unitContainer[index].name);
             RessourceManager.Instance.RemoveWallet(index);
             SpawningList.Add(index);
             
@@ -101,7 +101,10 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < SpawningList.Count; i++)
         {
             GameObject _spawn =Instantiate(unitContainer[SpawningList[i]], transform.position, Quaternion.identity);
-            _spawn.GetComponent<NavMeshAgent>().SetDestination(TargetPosition);
+            RessourceManager.Instance.STATS_refusysSpawned++;
+            Vector3 newPos = TargetPosition;
+            newPos = Random.insideUnitCircle * 10;
+            _spawn.GetComponent<NavMeshAgent>().SetDestination(newPos);
             TargetManager.Instance.currentUnits.Add(_spawn);
             //Debug.Log(" SPAWNING UNIT :" + _spawn.name);
         }

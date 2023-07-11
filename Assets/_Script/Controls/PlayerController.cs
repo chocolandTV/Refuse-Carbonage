@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             isSelected = false;
             EmptyTarget.SetActive(false);
-            //_mousePositionStart = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+            SelectionManager.Instance.DeselectAll();
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit,100f))
@@ -97,13 +97,14 @@ public class PlayerController : MonoBehaviour
                     // SelectionManager.Instance.DeselectAll();
                     SelectionManager.Instance.Select(_unit);
                     TargetManager.Instance.UpdateTarget(hit.transform.position);
-
+                     SoundManager.Instance.PlaySound(SoundManager.Sound.UnitAttack, _unit.transform.position);
                 }
                 else if (_unit != null && _unit.UnitFraction == 1)
                 {
                     // UPDATE MAP INFO
-                    
+                    SelectionManager.Instance.Select(_unit);
                     HudManager.Instance.UpdateHUD(6, _unit.infoText);
+                     SoundManager.Instance.PlaySound(SoundManager.Sound.UnitLaughing, _unit.transform.position);
                 }
                 
                 else{
@@ -111,10 +112,11 @@ public class PlayerController : MonoBehaviour
                     pos.y += 0.1f;
                     EmptyTarget.transform.position = pos;
                     EmptyTarget.SetActive(true);
-                    // HudManager.Instance.UpdateHUD(6, "No enemy here, shall you collect scrap, destroy oilyjacks or try to beat the Towers to grow.");
-                    HudManager.Instance.UpdateUnitMapInfo("Name: No Unit Selected","Damage: 0","Life: 0", "Ressource: 0", "Information:shall you collect scrap, destroy oilyjacks or try to beat the Towers to grow." );
+                    HudManager.Instance.UpdateUnitMapInfo("No Unit Selected","Your Refusys feeling well","Tower Destroyed: " + RessourceManager.Instance.STATS_TowerDestroyed,
+                     "Refusys created: "+ RessourceManager.Instance.STATS_refusysSpawned, "Time played: " + (int)Time.time);
         
                     TargetManager.Instance.UpdateTarget(pos);
+                     SoundManager.Instance.PlaySound(SoundManager.Sound.SetTarget, pos);
                 }
             }
         }

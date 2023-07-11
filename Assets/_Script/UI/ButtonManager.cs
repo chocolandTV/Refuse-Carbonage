@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour
     public void OnButtonClick(int index)
     {
         // CHECK MINERAL
+        SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         WaveManager.Instance.AddUnit(index);
         
 

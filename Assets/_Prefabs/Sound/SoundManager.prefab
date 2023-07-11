@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3075293991025443781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929782495790734110}
+  - component: {fileID: 4714236582032512236}
+  - component: {fileID: 7047636079599967880}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &929782495790734110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075293991025443781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.844792, y: -4.5394764, z: 16.17126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4714236582032512236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075293991025443781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793af77f5617b3146bae1698b7eb9811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7047636079599967880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075293991025443781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0d0871ffdf85c4fb5542758dae5983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound_Attacks:
+  - {fileID: 8300000, guid: 565eefbf3d7013f429062437dba56fb5, type: 3}
+  - {fileID: 8300000, guid: 0bd298deb6f3c0b48bdd22caa6fea0a3, type: 3}
+  - {fileID: 8300000, guid: f0dccbbf771756c4c9b9ca2f249e9cdf, type: 3}
+  - {fileID: 8300000, guid: 0f7dbfc3f7c31d74c8353d7e53e39ff9, type: 3}
+  - {fileID: 8300000, guid: 3e764935ec5b69c45a12b12053722971, type: 3}
+  - {fileID: 8300000, guid: 6e4565a5da21b434784fe8a9c437c8d4, type: 3}
+  Sound_Dying:
+  - {fileID: 8300000, guid: c9d948e7d298ee845a659fa95a865ffb, type: 3}
+  - {fileID: 8300000, guid: 67cf728850fae7241a9df62700feb31f, type: 3}
+  - {fileID: 8300000, guid: 22ffed2146810b6499e9577fdb3ffa02, type: 3}
+  - {fileID: 8300000, guid: 8ce7e76127320fc46b0fed8b577240c5, type: 3}
+  - {fileID: 8300000, guid: ecad999ffaa897f46879dca83e785c7e, type: 3}
+  - {fileID: 8300000, guid: eb122fe98e3ea2e47836a21f7c78c0cc, type: 3}
+  Sound_Laughing:
+  - {fileID: 8300000, guid: 19823d69cbe41ad42a8ea47f666e21c0, type: 3}
+  - {fileID: 8300000, guid: 50c5f859e2bb0ef49aade1b9c9dfa1ba, type: 3}
+  - {fileID: 8300000, guid: 9f48466fad0930e44bd0fc3a075b560c, type: 3}
+  - {fileID: 8300000, guid: f67016a9c07570943aefcbc43ebef3d6, type: 3}
+  - {fileID: 8300000, guid: db8a936ffaa7035428b6a17f5588458a, type: 3}
+  - {fileID: 8300000, guid: cbd0963695bdc894a8267dcbabc30fb8, type: 3}
+  - {fileID: 8300000, guid: 8165aa59b5625cd4ea56a835974f31c8, type: 3}
+  Sound_Click:
+  - {fileID: 8300000, guid: 0ae39986a4b4ce649a850a116bb6edf3, type: 3}
+  - {fileID: 8300000, guid: 88a3a22b3eaecf142a44c010e2f62edb, type: 3}
+  - {fileID: 8300000, guid: b9f3e338b81308d45aa2a1e36990922c, type: 3}
+  Sound_UnitSelect:
+  - {fileID: 8300000, guid: f47aadd2706aa3742ba7ff88ef3ea82c, type: 3}
+  - {fileID: 8300000, guid: 51a14cfc9d6516d43833a8744a708409, type: 3}
+  - {fileID: 8300000, guid: ddcd671b4130b6e46979dc8c1b3d1e0e, type: 3}
+  - {fileID: 8300000, guid: 1e003659230daf149a69a5cacf433e8f, type: 3}
+  Sound_BuildingDestroyed:
+  - {fileID: 8300000, guid: bc31715f5db810a44b8f6acadd33ebcf, type: 3}
+  - {fileID: 8300000, guid: 127790b0922d6834babac88781e5e9b1, type: 3}
+  Sound_SetTarget: {fileID: 8300000, guid: 57639bf52df995245b2ae8c3c5b198d8, type: 3}
+  Sound_NextWave: {fileID: 8300000, guid: 2d12ad966985a4c44819b3d897684a21, type: 3}
+  Sound_BuildTower: {fileID: 8300000, guid: b3a0d2ff3681ae94e98573c2cf4e8a36, type: 3}
+  Music_Songs:
+  - {fileID: 8300000, guid: 9c16a74789e2be046a15342c61fe4025, type: 3}
+  - {fileID: 8300000, guid: 5b3fe046c7c1c2c4e81a4a5e0415a016, type: 3}
+  SoundObject: {fileID: 3876471510048412304, guid: 192032dc144c9f54eb676d9c29a5dd16,
+    type: 3}
+  MusicObject: {fileID: 0}
+  SoundVolume: 0.5
+  MusicVolume: 0.5

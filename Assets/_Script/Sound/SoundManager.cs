@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     private AudioSourcePool audioSourcePool;
     private int currentMusicIndex = 2;
     public float SoundVolume = 0.5f;
-    public float MusicVolume = 0.5f;
+    public float MusicVolume = 0.3f;
     public enum Sound
     {
         UnitAttack,
@@ -41,7 +41,7 @@ public class SoundManager : MonoBehaviour
     }
     private void Start() {
         audioSourcePool = GetComponent<AudioSourcePool>();
-        currentMusicIndex = Random.Range(0,4);
+        currentMusicIndex = Random.Range(0,2);
         PlayMusicNext();
     }
     ///// PLAY SOUND VOIDS //////////////
@@ -53,29 +53,29 @@ public class SoundManager : MonoBehaviour
             audioSourcePool.PlayAtPoint(Sound_Attacks[Random.Range(0,Sound_Attacks.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
             break;
         case (Sound.UnitDying):
-            audioSourcePool.PlayAtPoint(Sound_Dying[Random.Range(0,Sound_Dying.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_Dying[Random.Range(0,Sound_Dying.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/2);
             break;
         case (Sound.UnitLaughing):
             audioSourcePool.PlayAtPoint(Sound_Laughing[Random.Range(0,Sound_Laughing.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
             break;  
         case (Sound.UnitSelect):
-            audioSourcePool.PlayAtPoint(Sound_UnitSelect[Random.Range(0,Sound_UnitSelect.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_UnitSelect[Random.Range(0,Sound_UnitSelect.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume /2);
             break;
         case (Sound.BuildingDestroyed):
-            audioSourcePool.PlayAtPoint(Sound_BuildingDestroyed[Random.Range(0,Sound_BuildingDestroyed.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_BuildingDestroyed[Random.Range(0,Sound_BuildingDestroyed.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/2);
             break;
         case (Sound.UIClick):
-            audioSourcePool.PlayAtPoint(Sound_Click[Random.Range(0,Sound_Click.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_Click[Random.Range(0,Sound_Click.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/2);
             break;
             // SOLOS 
         case (Sound.NextWave):
-            audioSourcePool.PlayAtPoint(Sound_NextWave, position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_NextWave, position,SoundObject.GetComponent<AudioSource>(), SoundVolume/2);
             break;
         case (Sound.SetTarget):
-            audioSourcePool.PlayAtPoint(Sound_SetTarget, position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_SetTarget, position,SoundObject.GetComponent<AudioSource>(), SoundVolume/4);
             break;
         case (Sound.BuildingTower):
-            audioSourcePool.PlayAtPoint(Sound_BuildTower, position,SoundObject.GetComponent<AudioSource>(), SoundVolume);
+            audioSourcePool.PlayAtPoint(Sound_BuildTower, position,SoundObject.GetComponent<AudioSource>(), SoundVolume/3);
             break;
         
         default:
