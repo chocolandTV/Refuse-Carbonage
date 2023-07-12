@@ -5,22 +5,21 @@ using UnityEngine;
 public class Unit_03_Healing : MonoBehaviour
 {
     [SerializeField]private GameObject HealEffectObject;
-    public int healingDamage = 3;
-    private float TimeStep = 1f;
-    private float time = 0;
+    public int healingDamage = 10;
+
     // Start is called before the first frame update
     
     private void HealUnit(GameObject target)
     {
        
         
-            target.GetComponent<SelectableUnit>().currentLife += healingDamage;
+            target.GetComponent<SelectableUnit>().HealingOverTime(healingDamage);
             HealEffectObject.SetActive(true);
-            Debug.Log("Healing");
+           
             
     }
     private void OnTriggerStay(Collider other) {
-        if(other.GetComponent<SelectableUnit>().isDamaged())
+        if(other.GetComponent<SelectableUnit>().isValideToHeal())
         {
             HealUnit(other.gameObject);
         }

@@ -19,7 +19,7 @@ public class TargetManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     public List<GameObject> currentUnits = new List<GameObject>();
-    public List<GameObject> allTarget = new List<GameObject>();
+    //public List<GameObject> allTarget = new List<GameObject>();
     public void UpdateTarget(Vector3 newTarget)
     {
         WaveManager.Instance.TargetPosition = newTarget;
@@ -37,12 +37,12 @@ public class TargetManager : MonoBehaviour
         }
     }
     
-    public void AddNewBuilding(GameObject unit)
-    {
-        allTarget.Add(unit);
-    }
-    public void RemoveBuilding(GameObject unit)
-    {
-        allTarget.Remove(unit);
-    }
+    // public void AddNewBuilding(GameObject unit)
+    // {
+    //     allTarget.Add(unit);
+    // }
+    // public void RemoveBuilding(GameObject unit)
+    // {
+    //     allTarget.Remove(unit);
+    // }
 }

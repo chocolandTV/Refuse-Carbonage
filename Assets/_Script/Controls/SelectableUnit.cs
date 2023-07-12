@@ -14,8 +14,9 @@ public class SelectableUnit : MonoBehaviour
     public int damage = 1;
     public int currentLife = 10;
     public int MaxLife;
-    public int UnitFraction = 0; // 0 ENEMY 1 PLAYER
-  
+    public int UnitFraction = 0;
+    public bool isHealed = false; // 0 ENEMY 1 PLAYER
+    private int _healingSteps = 0;
     [SerializeField] private GameObject _HealthbarObject;
     [SerializeField] private Image _HealthbarSprite;
     private Camera _cam;
@@ -48,11 +49,23 @@ public class SelectableUnit : MonoBehaviour
             }
         }
     }
-    public bool isDamaged()
+    public void AddLife(int value)
     {
-        return (currentLife < MaxLife);
+        MaxLife +=value;
+        currentLife += value;
+        level = value;
     }
-    private void UpdateHealthBar(bool _isActive, int _maxLife, int _currentLife)
+    public bool isValideToHeal()
+    {
+        return (currentLife < MaxLife  && !isHealed && UnitFraction ==1);
+    }
+   
+    public void HealingOverTime(int amount)
+    {
+        isHealed = true;
+        _healingSteps = amount;
+    }
+    private void UpdateHealthBar(bool _isActive, int _currentLife, int _maxLife)
     {
         if(_isActive)
         {
@@ -62,6 +75,7 @@ public class SelectableUnit : MonoBehaviour
             // TURN ON, SET VALUES AND COLOR
             _HealthbarObject.SetActive(true);
             _HealthbarSprite.fillAmount = (float) _currentLife /  _maxLife;
+            Debug.Log((float) _currentLife /  _maxLife);
             // COLOR GREEN
             _HealthbarSprite.color = Color.green;
             if(_HealthbarSprite.fillAmount < 0.76)
@@ -88,7 +102,7 @@ public class SelectableUnit : MonoBehaviour
         // HudManager.Instance.UpdateHUD(6,infoText);
         HudManager.Instance.UpdateUnitMapInfo(unitName,damage.ToString(),currentLife.ToString(), RessourceAmount.ToString(), infoText);
         
-        UpdateHealthBar(true,MaxLife,currentLife);
+        UpdateHealthBar(true,currentLife,MaxLife);
 
         if (gameObject.CompareTag("Enemy"))
         {
@@ -100,21 +114,29 @@ public class SelectableUnit : MonoBehaviour
     public void OnDeselect()
     {
         SelectionSprite.gameObject.SetActive(false);
-        UpdateHealthBar(false,MaxLife,currentLife);
+        UpdateHealthBar(false,currentLife,MaxLife);
     }
     
     public void Hit(int Amount)
     {
         
         currentLife -= Amount;
-        if(WaveManager.Instance.TargetPosition == transform.position)
+        // HEALING EFFECT
+        if(isHealed)
         {
-           HudManager.Instance.UpdateUnitMapInfo(unitName,damage.ToString(),currentLife.ToString(), RessourceAmount.ToString(), infoText);
+            currentLife+= _healingSteps;
+            _healingSteps --;
+            if(_healingSteps <= 0)
+            {
+                isHealed = false;
+            }
         }
         // IF SELECTED THEN UPDATE HEALTHBAR
         if(SelectionManager.Instance.IsSelected(this))
         {
-            UpdateHealthBar(true,MaxLife,currentLife);
+            UpdateHealthBar(true,currentLife,MaxLife);
+            HudManager.Instance.UpdateUnitMapInfo(unitName,damage.ToString(),currentLife.ToString(), RessourceAmount.ToString(), infoText);
+        
         }
 
         if (currentLife < 0)
@@ -128,7 +150,7 @@ public class SelectableUnit : MonoBehaviour
             {
                 RessourceManager.Instance.AddIncome(RessourceAmount * WaveManager.Instance.CurrentWave);
                 HudManager.Instance.UpdateHUD(4,RessourceManager.Instance.getIncome());
-                 SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed, transform.position);
+                
             }
             if(damage >= 1)
             {

@@ -23,10 +23,9 @@ public class EnemyManager : MonoBehaviour
     public void EnemyTurn(int wave)
     {
         
-        if (Random.Range(0, 100) < 70)
-        {
-            Spawn(buildings[0], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position,wave);
-        }
+        
+        Spawn(buildings[0], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position,wave);
+        
         if (Random.Range(0, 100) < 20)
         {
             Spawn(buildings[1], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position, wave);
@@ -34,10 +33,11 @@ public class EnemyManager : MonoBehaviour
         if (Random.Range(0, 100) < 10 + wave)
         {
             Spawn(buildings[2], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position,wave );
-            SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingTower, transform.position);
+            // SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingTower, transform.position);
         }
          
     }
+    
     private void Spawn(GameObject obj, Vector3 pos, int wave)
     {
         
@@ -46,16 +46,16 @@ public class EnemyManager : MonoBehaviour
         // IF BUILDING IS TOWER 
         if(obj == buildings[2])
         {
-            _objComponent.damage = 1 * wave;
+            _objComponent.damage *= wave;
         }
         // LIFE
-            _objComponent.currentLife = wave * wave; 
+            _objComponent.currentLife *=wave; 
         // RESSOURCE AMOUNT * WAVE
-            _objComponent.RessourceAmount +=wave;
+            _objComponent.RessourceAmount += wave;
         // LEVEL * WAVE
             _objComponent.level =_objComponent.damage *wave;
 
-        TargetManager.Instance.allTarget.Add(_obj);
+        //TargetManager.Instance.allTarget.Add(_obj);
     }
     
 }

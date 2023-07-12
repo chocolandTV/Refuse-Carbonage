@@ -53,7 +53,7 @@ public class SoundManager : MonoBehaviour
             audioSourcePool.PlayAtPoint(Sound_Attacks[Random.Range(0,Sound_Attacks.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/3);
             break;
         case (Sound.UnitDying):
-            audioSourcePool.PlayAtPoint(Sound_Dying[Random.Range(0,Sound_Dying.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/2);
+            audioSourcePool.PlayAtPoint(Sound_Dying[Random.Range(0,Sound_Dying.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/4);
             break;
         case (Sound.UnitLaughing):
             audioSourcePool.PlayAtPoint(Sound_Laughing[Random.Range(0,Sound_Laughing.Length)], position,SoundObject.GetComponent<AudioSource>(), SoundVolume/3);
