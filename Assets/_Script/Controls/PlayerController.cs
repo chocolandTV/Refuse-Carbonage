@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
         InputManager.OnInteract += OnInteractInput;
         InputManager.OnSpawn += OnSpawnInput;
         InputManager.OnZoom += OnZoomInput;
+        InputManager.OnPause += OnPauseInput;
     }
     private void UnsubscribeToInput()
     {
@@ -58,17 +59,9 @@ public class PlayerController : MonoBehaviour
         InputManager.OnInteract -= OnInteractInput;
         InputManager.OnSpawn -= OnSpawnInput;
         InputManager.OnZoom -= OnZoomInput;
+        InputManager.OnPause -= OnPauseInput;
     }
-    // public void SetControls(bool value)
-    // {
-    //     if(value)
-    //     {
-    //         SubscribeToInput;
-    //     }
-    //     else{
-    //         UnsubscribeToInput;
-    //     }
-    // }
+    
     private void OnLookInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -78,6 +71,23 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             _lookInputDelta = Vector2.zero;
+        }
+    }
+    private void OnPauseInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            if(!MenuManager.Instance.isGamePaused)
+            {
+                MenuManager.Instance.OnChangeGamePaused();
+                MenuManager.Instance.isGamePaused = true;
+
+            }
+            else
+            {
+                MenuManager.Instance.OnChangeGameResume();
+                MenuManager.Instance.isGamePaused = false;
+            }
         }
     }
     private void OnInteractInput(InputAction.CallbackContext context)
@@ -148,19 +158,7 @@ public class PlayerController : MonoBehaviour
             spawnTime = 0.05f;
         }
     }
-    // public void OnZoomInput(InputAction.CallbackContext context)
-    // {
-    //     if(context.performed)
-    //     {
-
-    //        float scroll = Input.GetAxis("Mouse ScrollWheel");
-    //        if (scroll == 0) {
-    //             return;
-    //     }
-
-    //     cam.fieldOfView = Mathf.Clamp(cam.fieldOfView - (scroll * ZoomSpeedMouse), ZoomBounds[0], ZoomBounds[1]);
-    //     }
-    // }
+    
     public void OnZoomInput(InputAction.CallbackContext context)
     {
         if (context.performed)

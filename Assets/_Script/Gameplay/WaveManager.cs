@@ -6,6 +6,8 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance { get; private set; }
     public int CurrentWave => wave_index;
+    public bool[]isMissionDone = new bool[5]  {false,false,false,false,false};// destroy Scrap, Oiljack,Tower,10Tower,EasterEgg
+
     [SerializeField] private List<GameObject> unitContainer = new List<GameObject>();
     [SerializeField] private GameObject firstTarget;
     private float wave_cooldown = 0;
@@ -94,6 +96,7 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < SpawningList.Count; i++)
         {
+            RessourceManager.Instance.AddIncome(1);
             GameObject _spawn = Instantiate(unitContainer[SpawningList[i]], transform.position, Quaternion.identity);
             RessourceManager.Instance.STATS_refusysSpawned++;
             Vector3 Pos = TargetPosition;

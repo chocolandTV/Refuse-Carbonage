@@ -17,8 +17,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject SettingMenuPanel; // ALLWAYS SWITCH TOO 
     [SerializeField] private GameObject CreditMenuPanel;
     [SerializeField] private GameObject SettingsPanel;
-
-    private bool isGamePaused = false;
+    [SerializeField] private TextMeshProUGUI StartResumeObject;
+    [SerializeField] private GameObject ShadowPanel;
+    public bool isGamePaused = false;
     public float CameraSpeedMultiplier = 0f;
     private void Awake()
     {
@@ -40,22 +41,7 @@ public class MenuManager : MonoBehaviour
         MouseSensitivitySlider.onValueChanged.AddListener(delegate { OnChangeMouseSensitivity(); });
 
     }
-    private void OnPauseGameInput(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            if (!isGamePaused)
-            {
-                OnChangeGamePaused();
-                isGamePaused = true;
-            }
-            else
-            {
-                OnChangeGameResume();
-                isGamePaused = false;
-            }
-        }
-    }
+    
     public void OnChangeSoundVolume()
     {
         
@@ -97,7 +83,8 @@ public class MenuManager : MonoBehaviour
     }
     public void OnChangeGameStart()
     {
-
+        StartResumeObject.text = "Resume";
+        ShadowPanel.SetActive(true);
         HudMenu.SetActive(true);
         MainMenu.SetActive(false);
         SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);

@@ -144,6 +144,8 @@ public class SelectableUnit : MonoBehaviour
             if(UnitFraction == 1)
             {
                 SoundManager.Instance.PlaySound(SoundManager.Sound.UnitDying, transform.position);
+                // Update HUD Count
+                HudManager.Instance.UpdateHUD(3, "" + TargetManager.Instance.currentUnits.Count);
                 TargetManager.Instance.currentUnits.Remove(gameObject);
             }
             if(UnitFraction ==0)

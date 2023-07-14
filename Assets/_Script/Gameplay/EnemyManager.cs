@@ -42,7 +42,7 @@ public class EnemyManager : MonoBehaviour
     {
         
         GameObject _obj = Instantiate(obj, pos, Quaternion.identity);
-        SelectableUnit _objComponent = _obj.GetComponent<SelectableUnit>();
+        SelectableUnit _objComponent = _obj.GetComponentInChildren<SelectableUnit>();
         // IF BUILDING IS TOWER 
         if(obj == buildings[2])
         {
