@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
 
         _playerInput = GetComponent<PlayerInput>();
         SubscribeToInput();
-        DontDestroyOnLoad(gameObject);
+       
     }
 
     // EVENTS STATICS

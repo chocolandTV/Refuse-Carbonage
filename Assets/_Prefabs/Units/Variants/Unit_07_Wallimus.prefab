@@ -91,12 +91,12 @@ PrefabInstance:
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: damage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: MaxLife
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -110,8 +110,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
+      propertyPath: UnitFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 8343282324784293645}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
       propertyPath: currentLife
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -130,6 +140,12 @@ PrefabInstance:
 --- !u!4 &5519455176080043220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986273843382165034, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7343236841633788670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8343282324784293645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 7343236841633788670}
   m_PrefabAsset: {fileID: 0}

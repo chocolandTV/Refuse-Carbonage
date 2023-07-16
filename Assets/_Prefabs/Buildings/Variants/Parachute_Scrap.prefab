@@ -79,6 +79,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 402723941561738833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8001674013282111902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7682414549318940623, guid: 2b395e839bf52a24b8d1c479dcc54889,
+    type: 3}
+  m_PrefabInstance: {fileID: 402723941561738833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &411882876194202161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 3081644394045525758, guid: 35c2f61c9461c534aacc14a7a7ded991,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
         type: 3}
@@ -165,7 +171,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6586647367072825884}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8619817324214702487}
   m_SourcePrefab: {fileID: 100100000, guid: 35c2f61c9461c534aacc14a7a7ded991, type: 3}
 --- !u!4 &7823629266860572095 stripped
 Transform:
@@ -173,3 +183,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 411882876194202161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8822120086143169637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
+    type: 3}
+  m_PrefabInstance: {fileID: 411882876194202161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8619817324214702487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822120086143169637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3c8acb93e573144ba52be3912883cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buidling: {fileID: 8001674013282111902}

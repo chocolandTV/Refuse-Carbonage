@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: MaxLife
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -115,8 +115,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
-      propertyPath: currentLife
+      propertyPath: UnitFaction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 5963936270737889186}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: currentLife
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -135,6 +145,12 @@ PrefabInstance:
 --- !u!4 &5169605745670480998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 241832532072670775, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4964383377669145169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5963936270737889186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 4964383377669145169}
   m_PrefabAsset: {fileID: 0}
@@ -243,7 +259,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 980709df25087bf4a943635c8c6a81ef,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5172636763509221375}
+      addedObject: {fileID: 653}
   m_SourcePrefab: {fileID: 100100000, guid: 980709df25087bf4a943635c8c6a81ef, type: 3}
 --- !u!4 &4674720710609201110 stripped
 Transform:
@@ -257,7 +273,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5140094584461230141}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5172636763509221375
+--- !u!95 &653
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

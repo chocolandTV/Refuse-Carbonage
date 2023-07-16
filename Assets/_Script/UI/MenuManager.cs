@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour
         Instance = this;
 
 
-        DontDestroyOnLoad(gameObject);
+        
     }
     private void Start()
     {
@@ -45,20 +45,20 @@ public class MenuManager : MonoBehaviour
     public void OnChangeSoundVolume()
     {
         
-        Debug.Log(" CHANGE SoundsSlider TO : " + SoundSlider.value);
+        // Debug.Log(" CHANGE SoundsSlider TO : " + SoundSlider.value);
         SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
     }
     public void OnChangeMusicVolume()
     {
-        SoundManager.Instance.PlaySound(SoundManager.Sound.UnitLaughing, transform.position);
-        //SoundManager.Instance.OnChangeMusicVolume(MusicSlider.value);
-        Debug.Log(" CHANGE MusicSlider TO : " + MusicSlider.value);
+       
+        SoundManager.Instance.OnChangeMusicVolume(MusicSlider.value);
+        // Debug.Log(" CHANGE MusicSlider TO : " + MusicSlider.value);
     }
 
     public void OnChangeMouseSensitivity()
     {
         // fast 3.0f
-        Debug.Log(" CHANGE MouseSlider TO : " + MouseSensitivitySlider.value);
+        // Debug.Log(" CHANGE MouseSlider TO : " + MouseSensitivitySlider.value);
         CameraSpeedMultiplier = MouseSensitivitySlider.value * 6;
 
 
@@ -89,6 +89,7 @@ public class MenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         SceneManager.LoadScene("Game_Main");
+        Destroy(gameObject);
         // UI OFF HUD ON
     }
     public void OnChangeGamePaused()
@@ -96,6 +97,7 @@ public class MenuManager : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Sound.UIClick, transform.position);
         HudMenu.SetActive(false);
         MainMenu.SetActive(true);
+        ShadowPanel.SetActive(true);
         Time.timeScale = 0;
 
     }

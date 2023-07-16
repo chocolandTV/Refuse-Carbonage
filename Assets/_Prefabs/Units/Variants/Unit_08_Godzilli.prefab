@@ -75,7 +75,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df5c5350aaa4a4e498484738ac65376d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5437701427739429222}
+      addedObject: {fileID: 655}
   m_SourcePrefab: {fileID: 100100000, guid: df5c5350aaa4a4e498484738ac65376d, type: 3}
 --- !u!1 &5982042642421106178 stripped
 GameObject:
@@ -83,7 +83,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6900945949140646739}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5437701427739429222
+--- !u!95 &655
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -223,6 +223,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5897566397817982060, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897566397817982060, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897566397817982060, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: level
@@ -231,12 +246,12 @@ PrefabInstance:
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: damage
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: MaxLife
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -250,8 +265,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
+      propertyPath: UnitFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 8221858139100946140}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
       propertyPath: currentLife
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -270,6 +295,12 @@ PrefabInstance:
 --- !u!4 &7892270449644251323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702053926835004308, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7221742433169607471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8221858139100946140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 7221742433169607471}
   m_PrefabAsset: {fileID: 0}

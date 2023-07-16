@@ -81,8 +81,9 @@ MonoBehaviour:
   currentLife: 10
   MaxLife: 0
   UnitFraction: 1
+  isHealed: 0
   _HealthbarObject: {fileID: 8009564825670821106}
-  _HealthbarSprite: {fileID: 6596635788530165200}
+  _Foreground: {fileID: 1594591002779489779}
 --- !u!65 &1839404129723600584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -265,18 +266,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4027628819083125469}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6596635788530165200 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7813453290601662221, guid: de848e9feb69cf64d8c24ab6725f013a,
+--- !u!1 &1594591002779489779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433108198004619054, guid: de848e9feb69cf64d8c24ab6725f013a,
     type: 3}
   m_PrefabInstance: {fileID: 4027628819083125469}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8009564825670821106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6395872160694519343, guid: de848e9feb69cf64d8c24ab6725f013a,

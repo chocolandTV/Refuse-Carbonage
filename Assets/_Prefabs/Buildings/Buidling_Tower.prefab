@@ -71,12 +71,12 @@ MonoBehaviour:
   RessourceAmount: 5
   level: 1
   damage: 1
-  currentLife: 500
+  currentLife: 100
   MaxLife: 0
-  UnitFraction: 0
+  UnitFaction: 0
   isHealed: 0
   _HealthbarObject: {fileID: 6894080790738850023}
-  _HealthbarSprite: {fileID: 7710431370115273157}
+  _Foreground: {fileID: 2786075774593229286}
 --- !u!65 &7503950016224017079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5118,24 +5118,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 535367759611336392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2786075774593229286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433108198004619054, guid: de848e9feb69cf64d8c24ab6725f013a,
+    type: 3}
+  m_PrefabInstance: {fileID: 535367759611336392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6894080790738850023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6395872160694519343, guid: de848e9feb69cf64d8c24ab6725f013a,
     type: 3}
   m_PrefabInstance: {fileID: 535367759611336392}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7710431370115273157 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7813453290601662221, guid: de848e9feb69cf64d8c24ab6725f013a,
-    type: 3}
-  m_PrefabInstance: {fileID: 535367759611336392}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1975595539873906088
 PrefabInstance:
   m_ObjectHideFlags: 0

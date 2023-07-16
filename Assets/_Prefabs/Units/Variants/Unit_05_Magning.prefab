@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1234128940554098020, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.45
+      objectReference: {fileID: 0}
     - target: {fileID: 1364011131106777463, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -111,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: MaxLife
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -125,8 +130,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
-      propertyPath: currentLife
+      propertyPath: UnitFaction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 1599305773211486396}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: currentLife
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009564825670821106, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
@@ -138,3 +158,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad13840bb88d16447ad311b28b5c39fd, type: 3}
+--- !u!1 &1599305773211486396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4714916736146767}
+  m_PrefabAsset: {fileID: 0}

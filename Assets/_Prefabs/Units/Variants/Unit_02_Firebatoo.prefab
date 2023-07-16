@@ -319,6 +319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
+      propertyPath: MaxLife
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
       propertyPath: infoText
       value: I can attack Buildings, i do my best to secure the Queen.
       objectReference: {fileID: 0}
@@ -327,6 +332,21 @@ PrefabInstance:
       propertyPath: unitName
       value: Firebatoo
       objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: UnitFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 7592975827334777664}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _HealthbarSprite
+      value: 
+      objectReference: {fileID: 1178038323387365953}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: m_Name
@@ -341,9 +361,21 @@ PrefabInstance:
       addedObject: {fileID: 3628178912673768436}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad13840bb88d16447ad311b28b5c39fd, type: 3}
+--- !u!1 &1178038323387365953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8009564825670821106, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 9186933502822473395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6201434034125127833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986273843382165034, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 9186933502822473395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7592975827334777664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 9186933502822473395}
   m_PrefabAsset: {fileID: 0}

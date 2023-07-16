@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 6717755817260440551, guid: b1d0290a605aebf4b84c910841ca59dd,
         type: 3}
       propertyPath: m_Name
-      value: Parachute_Tower
+      value: Parachute_Origin
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8302699588595969408, guid: b1d0290a605aebf4b84c910841ca59dd, type: 3}
@@ -145,7 +145,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

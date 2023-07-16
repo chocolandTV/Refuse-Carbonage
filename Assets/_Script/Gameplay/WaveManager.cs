@@ -55,7 +55,20 @@ public class WaveManager : MonoBehaviour
             wave_index++;
             if (wave_index == 100)
             {
+                MissionManager.Instance.UpdateMission();
                 HudManager.Instance.GameWin();
+            }
+            if(wave_index ==250)
+            {
+                MissionManager.Instance.UpdateMission();
+            }
+            if(wave_index == 500)
+            {
+                MissionManager.Instance.UpdateMission();
+            }
+            if(wave_index == 1000)
+            {
+                MissionManager.Instance.UpdateMission();
             }
             HudManager.Instance.UnlockUnit(wave_index);
             EnemyManager.Instance.EnemyTurn(wave_index);
@@ -96,8 +109,9 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < SpawningList.Count; i++)
         {
-            RessourceManager.Instance.AddIncome(1);
+            
             GameObject _spawn = Instantiate(unitContainer[SpawningList[i]], transform.position, Quaternion.identity);
+            Debug.Log(_spawn + " name:" +_spawn.name);
             RessourceManager.Instance.STATS_refusysSpawned++;
             Vector3 Pos = TargetPosition;
             Vector2 offset = Random.insideUnitCircle * 2f;
@@ -105,6 +119,7 @@ public class WaveManager : MonoBehaviour
             Pos.z += offset.y;
             _spawn.GetComponent<NavMeshAgent>().SetDestination(Pos);
             _spawn.GetComponent<SelectableUnit>().AddLife(wave_index);
+            _spawn.GetComponent<SelectableUnit>().AddDamage(wave_index);
             TargetManager.Instance.currentUnits.Add(_spawn);
             HudManager.Instance.UpdateHUD(3, "" + TargetManager.Instance.currentUnits.Count);
 

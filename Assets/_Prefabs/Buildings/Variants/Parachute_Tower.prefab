@@ -63,13 +63,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3081644394045525758, guid: 35c2f61c9461c534aacc14a7a7ded991,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
         type: 3}
       propertyPath: m_Name
-      value: Parachute_Origin
+      value: Parachute_Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584966262825777517}
   m_SourcePrefab: {fileID: 100100000, guid: 35c2f61c9461c534aacc14a7a7ded991, type: 3}
+--- !u!1 &5051382971040415396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9212458495444112980, guid: 35c2f61c9461c534aacc14a7a7ded991,
+    type: 3}
+  m_PrefabInstance: {fileID: 4162210326603622640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584966262825777517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051382971040415396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3c8acb93e573144ba52be3912883cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buidling: {fileID: 5888319141611542355}
+--- !u!1 &5888319141611542355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7526824713021587363, guid: 35c2f61c9461c534aacc14a7a7ded991,
+    type: 3}
+  m_PrefabInstance: {fileID: 4162210326603622640}
+  m_PrefabAsset: {fileID: 0}

@@ -159,7 +159,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cfca52932f6414994dd74169bcd185,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1267727079837720480}
+      addedObject: {fileID: 774}
   m_SourcePrefab: {fileID: 100100000, guid: 52cfca52932f6414994dd74169bcd185, type: 3}
 --- !u!4 &8080251007466162575 stripped
 Transform:
@@ -173,7 +173,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8622255868202593892}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1267727079837720480
+--- !u!114 &774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 362237145287722501, guid: 9a6bbcc1cc759184baf56ae1c7d61db4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8696133614494185343}
+      addedObject: {fileID: 635}
   m_SourcePrefab: {fileID: 100100000, guid: 9a6bbcc1cc759184baf56ae1c7d61db4, type: 3}
 --- !u!4 &5302649787599510905 stripped
 Transform:
@@ -289,7 +289,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8877471141545002667}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &8696133614494185343
+--- !u!54 &635
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -396,6 +396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
+      propertyPath: MaxLife
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
       propertyPath: infoText
       value: I can heal other Refusys
       objectReference: {fileID: 0}
@@ -404,6 +409,21 @@ PrefabInstance:
       propertyPath: unitName
       value: Healimi
       objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: UnitFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _Foreground
+      value: 
+      objectReference: {fileID: 7577376242871823716}
+    - target: {fileID: 6563292311977559333, guid: ad13840bb88d16447ad311b28b5c39fd,
+        type: 3}
+      propertyPath: _HealthbarSprite
+      value: 
+      objectReference: {fileID: 1166062179867024485}
     - target: {fileID: 8361313573085463147, guid: ad13840bb88d16447ad311b28b5c39fd,
         type: 3}
       propertyPath: m_Name
@@ -426,9 +446,21 @@ PrefabInstance:
       addedObject: {fileID: 3442702972945237119}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad13840bb88d16447ad311b28b5c39fd, type: 3}
+--- !u!1 &1166062179867024485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8009564825670821106, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 9153882465493809303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6230870440973887165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986273843382165034, guid: ad13840bb88d16447ad311b28b5c39fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 9153882465493809303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7577376242871823716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1594591002779489779, guid: ad13840bb88d16447ad311b28b5c39fd,
     type: 3}
   m_PrefabInstance: {fileID: 9153882465493809303}
   m_PrefabAsset: {fileID: 0}

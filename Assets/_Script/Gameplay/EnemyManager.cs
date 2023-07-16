@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
     [SerializeField] private GameObject[] buildings;
-    [SerializeField] private GameObject[] SpawnPoints;
+    private readonly float bounds = 42.0f;
     private void Awake()
     {
         if (Instance != null)
@@ -19,21 +19,30 @@ public class EnemyManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
+  
+    private Vector3 GetRandomSpawnPoint()
+    {
+        return new Vector3(
+            Random.Range(-bounds, bounds),
+            25,
+            Random.Range(-bounds, bounds)
+    );
+    }
     public void EnemyTurn(int wave)
     {
         
-        
-        Spawn(buildings[0], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position,wave);
-        
-        if (Random.Range(0, 100) < 20)
+        if (Random.Range(0, 100) < 25)
         {
-            Spawn(buildings[1], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position, wave);
+            Spawn(buildings[0], GetRandomSpawnPoint(),wave);
         }
-        if (Random.Range(0, 100) < 10 + wave)
+        if (Random.Range(0, 100) < 10)
         {
-            Spawn(buildings[2], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position,wave );
-            // SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingTower, transform.position);
+            Spawn(buildings[1],  GetRandomSpawnPoint(), wave);
+        }
+        if (Random.Range(0, 100) < 5)
+        {
+            Spawn(buildings[2],  GetRandomSpawnPoint(),wave );
+            
         }
          
     }
@@ -50,6 +59,7 @@ public class EnemyManager : MonoBehaviour
         }
         // LIFE
             _objComponent.currentLife *=wave; 
+            _objComponent.MaxLife *=wave; 
         // RESSOURCE AMOUNT * WAVE
             _objComponent.RessourceAmount += wave;
         // LEVEL * WAVE

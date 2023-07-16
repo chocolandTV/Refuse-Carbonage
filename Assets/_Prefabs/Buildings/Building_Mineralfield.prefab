@@ -73,10 +73,10 @@ MonoBehaviour:
   damage: 0
   currentLife: 2000
   MaxLife: 0
-  UnitFraction: 0
+  UnitFaction: 0
   isHealed: 0
   _HealthbarObject: {fileID: 1239488988018343237}
-  _HealthbarSprite: {fileID: 2711106656246037607}
+  _Foreground: {fileID: 7508939284774210628}
 --- !u!65 &4168240759628630133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -337,18 +337,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5328109640374205290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2711106656246037607 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7813453290601662221, guid: de848e9feb69cf64d8c24ab6725f013a,
+--- !u!1 &7508939284774210628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433108198004619054, guid: de848e9feb69cf64d8c24ab6725f013a,
     type: 3}
   m_PrefabInstance: {fileID: 5328109640374205290}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8013238358627339475 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2793782809642334137, guid: de848e9feb69cf64d8c24ab6725f013a,

@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource MusicObject;
     private AudioSource _audioSource;
     private AudioSourcePool audioSourcePool;
-    private int currentMusicIndex = 2;
+    public int currentMusicIndex = 0;
     public float SoundVolume = 0.5f;
     public float MusicVolume = 0.3f;
     public enum Sound
@@ -37,11 +37,11 @@ public class SoundManager : MonoBehaviour
         Instance = this;
 
 
-        DontDestroyOnLoad(gameObject);
+        
     }
     private void Start() {
         audioSourcePool = GetComponent<AudioSourcePool>();
-        currentMusicIndex = Random.Range(0,2);
+        
         PlayMusicNext();
     }
     ///// PLAY SOUND VOIDS //////////////
@@ -87,6 +87,7 @@ public class SoundManager : MonoBehaviour
     public void OnChangeMusicVolume(float value)
     {
         MusicVolume  = value;
+        MusicObject.volume =MusicVolume;
         
     }
     public void OnChangeSoundVolume(float value)
@@ -103,7 +104,7 @@ public class SoundManager : MonoBehaviour
     {
         if(Application.isEditor) Debug.LogWarning("audio finished!");
         currentMusicIndex ++;
-        if(currentMusicIndex >= 2)
+        if(currentMusicIndex > 1)
             currentMusicIndex = 0;
         PlayMusicNext();
     }
